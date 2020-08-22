@@ -5,7 +5,8 @@ const forecast = (latitude, longitude, callback) => {
 
     axios.get(url).then(( { data }) =>{
         
-        const result = data.current.weather[0].description + '. The current temperature is ' + data.current.temp + ' degrees out.'
+        const result = data.current.weather[0].description + '. The current temperature is ' + data.current.temp + ' degrees out.' +
+                        ' The Wind Speed is ' + data.current.wind_speed + ' KT.'
         callback(undefined, result)
         
     }).catch((error) => {
